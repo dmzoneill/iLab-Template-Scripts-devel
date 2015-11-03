@@ -1,0 +1,4 @@
+;!@Install@!UTF-8!
+Title="iLab Template Preparation"
+RunProgram="input\windows\setup.bat"
+;!@InstallEnd@!

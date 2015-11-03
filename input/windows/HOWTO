@@ -1,0 +1,7 @@
+1. Identify Windows BUILD Version \\ger.corp.intel.com\ec\proj\Labs\WDE\Build\Images
+2. copy ./windows/unattend/BUILD/.xml file to /temp directory
+3. copy ./windows/unattend/joindom.exe file to /temp directory 
+4. copy ./windows/rencomp.hta file to /temp directory 
+5. run: cmd
+6. %systemroot%\system32\sysprep\sysprep.exe /oobe /generalize /shutdown /unattend:c:\temp\.xml
+

@@ -1,0 +1,26 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+            before *
+}
+
+
+start() {
+
+            ebegin "Begining iLab congfiguration"
+                    bash /root/sethostname.sh
+                            eend $?
+}
+
+stop() {
+            ebegin "iLab stopping"
+                    eend $?
+}
+
+reload() {
+            ebegin "iLab reloading"
+                    eend $?
+}
+

@@ -1,0 +1,50 @@
+; EC-BigFix besclient.config file
+
+[Software\BigFix\EnterpriseClient\GlobalOptions]
+StoragePath                    = /var/opt/BESClient
+LibPath                        = /opt/BESClient/BESLib
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_EMsg_File]
+value                          = /var/log/BESClient/besclient.log
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_EMsg_Detail]
+value                          = 0
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_SleepIdle]
+value                          = 1000
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_WorkIdle]
+value                          = 1
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_WorkNormal]
+value                          = 5
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_SleepNormal]
+value                          = 1000
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_QuietEnable]
+value                          = 1
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_QuietStartTime]
+value                          = 12:34
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Resource_QuietSeconds]
+value                          = 64800
+
+[Software\BigFix\EnterpriseClient\Settings\Client\__LockState]
+value                          = false
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Comm_ListenEnable]
+value                          = 0
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Comm_CommandPollEnable]
+value                          = 1
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_Comm_CommandPollIntervalSeconds]
+value                          = 3600
+
+[Software\BigFix\EnterpriseClient\Settings\Client\_BESClient_NoCPUReset]
+value                          = 1
+
+[Software\BigFix\EnterpriseClient\Settings\Client\__RelaySelect_Automatic]
+value                          = 1

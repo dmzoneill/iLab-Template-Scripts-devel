@@ -1,0 +1,6 @@
+Group: IT
+Division: $(do_global_bigfix.bf_division)
+Business Unit: $(do_global_bigfix.bf_businessunit)
+Site: $(do_global_bigfix.bf_site)
+Category: $(do_global_bigfix.bf_category)
+SystemType: $(do_global_bigfix.bf_systemtype)

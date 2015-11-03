@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="generalize">
+        <component name="Microsoft-Windows-PnpSysprep" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <PersistAllDeviceInstalls>true</PersistAllDeviceInstalls>
+        </component>
+    </settings>
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <AutoLogon>
+                <Password>
+                    <Value>JABaAHAAeAAwADMAMgBkAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+                    <PlainText>false</PlainText>
+                </Password>
+                <Domain>.</Domain>
+                <Enabled>true</Enabled>
+                <LogonCount>3</LogonCount>
+                <Username>Administrator</Username>
+            </AutoLogon>
+            <CopyProfile>true</CopyProfile>
+            <DoNotCleanTaskBar>true</DoNotCleanTaskBar>
+            <ProductKey>33PXH-7Y6KF-2VJC9-XBBR8-HVTHH</ProductKey>
+            <ComputerName>iLabWin7X64</ComputerName>
+            <RegisteredOrganization>Intel Corp.</RegisteredOrganization>
+            <RegisteredOwner>Windows 7 Enterprise ECLabs</RegisteredOwner>
+            <ShowWindowsLive>false</ShowWindowsLive>
+            <TimeZone>W. Europe Standard Time</TimeZone>
+        </component>
+    </settings>
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <AutoLogon>
+                <Password>
+                    <Value>JABaAHAAeAAwADMAMgBkAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+                    <PlainText>false</PlainText>
+                </Password>
+                <Domain>.</Domain>
+                <Enabled>true</Enabled>
+                <LogonCount>3</LogonCount>
+                <Username>Administrator</Username>
+            </AutoLogon>
+            <DoNotCleanTaskBar>true</DoNotCleanTaskBar>
+            <RegisteredOrganization>Intel Corp.</RegisteredOrganization>
+            <RegisteredOwner>Windows 7 Enterprise ECLabs</RegisteredOwner>
+            <OOBE>
+                <HideEULAPage>true</HideEULAPage>
+                <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+                <NetworkLocation>Work</NetworkLocation>
+                <ProtectYourPC>3</ProtectYourPC>
+            </OOBE>
+            <UserAccounts>
+                <AdministratorPassword>
+                    <Value>JABaAHAAeAAwADMAMgBkAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIAUABhAHMAcwB3AG8AcgBkAA==</Value>
+                    <PlainText>false</PlainText>
+                </AdministratorPassword>
+				<LocalAccounts>
+	            	<LocalAccount wcm:action="add">
+						<Password>
+	                    	<Value>JABaAHAAeAAwADMAMgBkAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+	                        <PlainText>false</PlainText>
+						</Password>
+	                    <Description>fake user</Description>
+	                    <DisplayName>fakeuser</DisplayName>
+	                    <Group>Users</Group>
+	                    <Name>fake</Name>
+					</LocalAccount>
+                </LocalAccounts>
+            </UserAccounts>
+            <TimeZone>W. Europe Standard Time</TimeZone>
+            <ShowWindowsLive>false</ShowWindowsLive>
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>mshta.exe c:\temp\rencomp.hta</CommandLine>
+                    <Description>Renaming computer</Description>
+                    <Order>1</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
+            </FirstLogonCommands>
+        </component>
+        <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <InputLocale>en-US</InputLocale>
+            <SystemLocale>en-US</SystemLocale>
+            <UILanguage>en-US</UILanguage>
+            <UILanguageFallback>en-US</UILanguageFallback>
+            <UserLocale>en-US</UserLocale>
+        </component>
+    </settings>
+    <cpi:offlineImage cpi:source="catalog:c:/temp/install_windows 7 enterprise - sp164.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>
