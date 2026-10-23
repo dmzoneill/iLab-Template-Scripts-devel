@@ -15,21 +15,21 @@
 # Sites Settings
 #--------------------------------------------------------------------------------------
 
-var_sitecount=1
+source "$(dirname "${BASH_SOURCE[0]}")/sites_common.sh"
 
-nisdomain[ $var_sitecount ]="iind.intel.com"
-dnsdomain[ $var_sitecount ]="iind.intel.com"
-addomain[ $var_sitecount ]="GAR"
-dnsprefix[ $var_sitecount ]="balv"
-shortcode[ $var_sitecount ]="ba"
-fullname[ $var_sitecount ]="Bangalore"
-proxyhost[ $var_sitecount ]="autoproxy"
-proxyport[ $var_sitecount ]="911"
-automaster[ $var_sitecount ]=$(printf "+auto.master\n")
-nishost1[ $var_sitecount ]="nis-host1"
-nishost2[ $var_sitecount ]="nis-host2"
-mailhost[ $var_sitecount ]="ecsmtp"
-ntphost1[ $var_sitecount ]="ntp-host1"
-ntphost2[ $var_sitecount ]="ntp-host2"
-ntphost3[ $var_sitecount ]="ntp-host3"
-nodeshost[ $var_sitecount ]="nodes-host"
+ilab_add_site "iind.intel.com" \
+	"iind.intel.com" \
+	"GAR" \
+	"balv" \
+	"ba" \
+	"Bangalore" \
+	"autoproxy" \
+	"911" \
+	"$(printf "+auto.master\n")" \
+	"nis-host1" \
+	"nis-host2" \
+	"ecsmtp" \
+	"ntp-host1" \
+	"ntp-host2" \
+	"ntp-host3" \
+	"nodes-host"
