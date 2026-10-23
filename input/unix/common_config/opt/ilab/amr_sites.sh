@@ -3,7 +3,7 @@
 # FILE: amr_sites.sh
 # USAGE: source sites.sh
 #
-# DESCRIPTION: Include file contatining AMR region site specific system config
+# DESCRIPTION: Include file containing AMR region site specific system config
 #
 # AUTHOR: "O Neill, David M" <david.m.oneill@intel.com>
 # AUTHOR: "Redlarski, Michal" <michal.redlarski@intel.com>

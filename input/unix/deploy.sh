@@ -101,8 +101,8 @@ function install_nodes {
 
 #=== FUNCTION =========================================================================
 # NAME: deploy_template_files
-# DESCRIPTION: Copies the distibution specific files in place and sets the distro
-#              Shebangs and also fixes permisisons for execution later.
+# DESCRIPTION: Copies the distribution specific files in place and sets the distro
+#              Shebangs and also fixes permissions for execution later.
 #======================================================================================
 
 function deploy_template_files {
@@ -190,7 +190,7 @@ function init_deploy {
 	echo $LINE
 	echo ""
 
-	read -r -p "Plese enter region [ger, gar, amr, ccr]: " REGION
+	read -r -p "Please enter region [ger, gar, amr, ccr]: " REGION
 	read -r -p "Please enter the template you want to use eg. [redhat, fedora, ubuntu, suse]: " TEMPLATE
 	# read -r -p "Will this template require nodes registration? [y/n]: " NODES
 	# read -r -p "Will this template require bigfix? [y/n]: " BIGFIX

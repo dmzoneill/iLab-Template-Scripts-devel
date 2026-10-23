@@ -3,7 +3,7 @@
 # FILE: ccr_sites.sh
 # USAGE: source sites.sh
 #
-# DESCRIPTION: Include file contatining CCR region site specific system config
+# DESCRIPTION: Include file containing CCR region site specific system config
 #
 # AUTHOR: "O Neill, David M" <david.m.oneill@intel.com>
 # AUTHOR: "Redlarski, Michal" <michal.redlarski@intel.com>
