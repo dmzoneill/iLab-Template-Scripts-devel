@@ -106,9 +106,9 @@ function install_nodes {
 #======================================================================================
 
 function deploy_template_files {
-	cp -v ${TEMPLATE}/preparetemplate.sh ${ilabdir}
-	cp -v ${TEMPLATE}/sethostname.sh ${ilabdir}
-	cp -v common_config/opt/ilab/${REGION}_sites.sh ${ilabdir}/sites.sh
+	cp -v "${TEMPLATE}/preparetemplate.sh" "${ilabdir}"
+	cp -v "${TEMPLATE}/sethostname.sh" "${ilabdir}"
+	cp -v "common_config/opt/ilab/${REGION}_sites.sh" "${ilabdir}/sites.sh"
 	cp -v common_config/opt/ilab/sites_common.sh ${ilabdir}
 
 	chmod 600 ${ilabdir}/*
