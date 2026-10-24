@@ -8,50 +8,35 @@ mount boot
 ###############################
 var_debug=0
 
-
 # Save system configuration
 ###########################
 
-function distro_save()
-{
+function distro_save() {
 	if [ $var_debug -eq 0 ]; then
 
-		echo "${var_hostname}" > /etc/hostname
+		echo "${var_hostname}" >/etc/hostname
 
 	fi
 }
-
 
 # Brings up the network if required
 ###################################
 
-function distro_ifup()
-{
-	local RETVAL=0;
-
-    notice "System Initialising Networking" 5
-    
-	# to do
+function distro_ifup() {
+	notice "System Initialising Networking" 5
 	/usr/bin/unlink /etc/resolv.conf
-    /sbin/dhclient -v eth0
-
-	if [ "$?" -ne "0" ]; then
-		RETVAL=1
-	fi
-
-	return $(($RETVAL))
+	/sbin/dhclient -v eth0 || return 1
+	return 0
 }
-
 
 # reboot - Change back to runlevel 3 and reboot
 ###############################################
 
-function distro_reboot()
-{
-    dpkg-reconfigure openssh-server > /dev/null 2>&1
+function distro_reboot() {
+	dpkg-reconfigure openssh-server >/dev/null 2>&1
 
 	sed -i '/\/opt\/ilab\/sethostname.sh/d' /etc/bash.bashrc
-	sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=\".*\"/GRUB_CMDLINE_LINUX_DEFAULT=\"text\"/g' /etc/default/grub 
+	sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=\".*\"/GRUB_CMDLINE_LINUX_DEFAULT=\"text\"/g' /etc/default/grub
 	update-grub
 
 	mkfifo /dev/initctl
@@ -59,15 +44,9 @@ function distro_reboot()
 	reboot -f
 }
 
-
 # Include setup dialog
-######################
-if [ -f common.sh ]; then
-    source common.sh
-elif [ -f /opt/ilab/common.sh ]; then
-    source /opt/ilab/common.sh
-else
-    source ../common.sh
-fi
-
-
+ilab_common=../common.sh
+[ -f /opt/ilab/common.sh ] && ilab_common=/opt/ilab/common.sh
+[ -f common.sh ] && ilab_common=common.sh
+# shellcheck source=../common.sh
+source "${ilab_common}"

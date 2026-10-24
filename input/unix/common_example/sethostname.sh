@@ -5,13 +5,12 @@
 ###############################
 var_debug=0
 
-
 # Save system configuration
 #################################################################################
 
-function save()
-{
+function save() {
 	if [ $var_debug -eq 0 ]; then
+		:
 
 		#echo -e "${var_hostname}" > /etc/hostname
 		#echo "send fqdn.fqdn \"${var_hostname}.${var_dnsdomain}.\";" > /etc/dhcp/dhclient-eth0.conf
@@ -19,16 +18,9 @@ function save()
 	fi
 }
 
-
 # Include setup dialog
-######################
-if [ -f common.sh ]; then
-    source common.sh
-elif [ -f /opt/ilab/common.sh ]; then
-    source /opt/ilab/common.sh
-else
-    source ../common.sh
-fi
-
-
-
+ilab_common=../common.sh
+[ -f /opt/ilab/common.sh ] && ilab_common=/opt/ilab/common.sh
+[ -f common.sh ] && ilab_common=common.sh
+# shellcheck source=../common.sh
+source "${ilab_common}"
