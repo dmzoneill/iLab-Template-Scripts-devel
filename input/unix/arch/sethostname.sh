@@ -5,48 +5,33 @@
 ###############################
 var_debug=0
 
-
 # Save system configuration
 ###########################
 
-function distro_save()
-{
+function distro_save() {
 	if [ $var_debug -eq 0 ]; then
 
-		echo -e "${var_hostname}" > /etc/hostname
+		echo -e "${var_hostname}" >/etc/hostname
 
-		echo "NISDOMAINNAME=\"${var_nisdomain}\"" > /etc/conf.d/nisdomainname
+		echo "NISDOMAINNAME=\"${var_nisdomain}\"" >/etc/conf.d/nisdomainname
 
-		echo "send fqdn.fqdn \"${var_hostname}.${var_dnsdomain}.\";" > /etc/dhclient.conf
+		echo "send fqdn.fqdn \"${var_hostname}.${var_dnsdomain}.\";" >/etc/dhclient.conf
 
 	fi
 }
-
 
 # Brings up the network if required
 ###################################
 
-function distro_ifup()
-{
-	local RETVAL=0;
-
-    notice "System Initialising Networking" 5
-    
-    # to do
-
-	if [ "$?" -ne "0" ]; then
-		RETVAL=1
-	fi
-
-	return $(($RETVAL))
+function distro_ifup() {
+	notice "System Initialising Networking" 5
+	return 0
 }
-
 
 # reboot - Chang eback to runlevel 3 and reboot
 ###############################################
 
-function distro_reboot()
-{
+function distro_reboot() {
 	sed -i '/\/opt\/ilab\/sethostname.sh/d' /root/.bashrc
 
 	sed -i 's/\/bin\/bash -l/\/sbin\/sulogin/g' /lib/systemd/system/rescue.service
@@ -57,16 +42,9 @@ function distro_reboot()
 	reboot
 }
 
-
 # Include setup dialog
-######################
-if [ -f common.sh ]; then
-    source common.sh
-elif [ -f /opt/ilab/common.sh ]; then
-    source /opt/ilab/common.sh
-else
-    source ../common.sh
-fi
-
-
-
+ilab_common=../common.sh
+[ -f /opt/ilab/common.sh ] && ilab_common=/opt/ilab/common.sh
+[ -f common.sh ] && ilab_common=common.sh
+# shellcheck source=../common.sh
+source "${ilab_common}"
