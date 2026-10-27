@@ -14,38 +14,38 @@ Before using the ilab templates scripts, we have defined some general setup guid
 
 ## Clone
 
-1. # Git clone <https://github.intel.com/ilab/iLab-Template-Scripts><br />
-2. # cd iLab-Template-Scripts<br />
+1. `git clone <https://github.intel.com/ilab/iLab-Template-Scripts>`
+2. `cd iLab-Template-Scripts`
 
 ## Linux Usage
 
-##### Modify sites
+### Modify sites
 
-1. # vi input/unix/common_config/opt/ilab/<b>XXX</b>-sites.sh
+1. `vi input/unix/common_config/opt/ilab/XXX-sites.sh`
 
-##### Create Self extracting setup file
+### Create Self extracting setup file
 
-1. # ./create-unix-installer.sh<br />
+1. `./create-unix-installer.sh`
 
-##### Prepare your ilab template
+### Prepare your ilab template
 
-1. # scp output/ilab.run root@<b>TEMPLATE</b>:/root<br />
-2. # SSH root@<b>TEMPLATE</b><br />
-3. # ./ilab.run<br />
+1. `scp output/ilab.run root@TEMPLATE:/root`
+2. `SSH root@TEMPLATE`
+3. `./ilab.run`
 
 ## Windows Usage
 
-##### Modify sites
+### Modify sites (Windows)
 
-1. # notepad input/windows/sites.js
+1. `notepad input/windows/sites.js`
 
-##### Create Self extracting setup file
+### Create Self extracting setup file (Windows)
 
-1. # ./create-windows-installer.bat<br />
+1. `./create-windows-installer.bat`
 
-##### Prepare your ilab template
+### Prepare your ilab template (Windows)
 
-1. # net use x: \\\\<b>TEMPLATE</b>\\c$
-2. # copy output\ilab.exe x:\
-3. # mstsc /v:"<b>TEMPLATE</b>"
-4. # c:\ilab.exe
+1. `net use x: \\\\TEMPLATE\\c$`
+2. `copy output\ilab.exe x:\`
+3. `mstsc /v:"TEMPLATE"`
+4. `c:\ilab.exe`
